@@ -1,16 +1,13 @@
 'use client'
 
-import Image from 'next/image'
-import styles from './page.module.css'
 import { useState } from 'react'
+import Button from '../app/atoms/Button';
 
 export default function Home() {
 
-  var [exVal, setExVal] = useState('');
-
   return (
     <main>
-      Lmao
+      main
     </main>
   )
 }
