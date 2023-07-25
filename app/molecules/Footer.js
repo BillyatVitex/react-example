@@ -1,5 +1,5 @@
 
-export default function List() {
+export default function Footer() {
   
     return (
       <main>
