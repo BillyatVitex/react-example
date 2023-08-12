@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import Button from '../app/atoms/Button';
-
 export default function Home() {
 
   return (
     <main>
-      main
+      <h1>
+        Hi everyone, welcome to the seminar
+      </h1>
     </main>
   )
 }
