@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CopyBlock, dracula } from "react-code-blocks";
+import { CopyBlock, atomOneDark } from "react-code-blocks";
 
-export default function ExtractingStateLogicIntoAReducer() {
+export default function ChosingTheStateStructure() {
 
     const initialTravelPlan = {
         0: {
@@ -315,18 +315,18 @@ export default function ExtractingStateLogicIntoAReducer() {
             </h3>
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const [x, setX] = useState(0);
 const [y, setY] = useState(0);`}
-                language='javascript'
+                language='jsx'
             />
 
             <br></br>
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text='const [position, setPosition] = useState({x: 0, y: 0 }});'
-                language='javascript'
+                language='jsx'
             />
 
             Note: Another case where you’ll group data into an object or an array is when you don’t know how many pieces of state you’ll need. For example, it’s helpful when you have a form where the user can add custom fields
@@ -336,10 +336,10 @@ const [y, setY] = useState(0);`}
 
             if you forget to call setIsSent and setIsSending together, you may end up in a situation where both isSending and isSent are true at the same time. The more complex your component is, the harder it is to understand what happened.
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const [isSending, setIsSending] = useState(false);
 const [isSent, setIsSent] = useState(false);`}
-                language='javascript'
+                language='jsx'
             />
 
             <hr></hr>
@@ -348,22 +348,22 @@ const [isSent, setIsSent] = useState(false);`}
             If you can calculate some information from the component’s props or its existing state variables during rendering, you should not put that information into that component’s state.
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
 const [fullName, setFullName] = useState('');`
                 }
-                language='javascript'
+                language='jsx'
             />
 
             You can always calculate fullName from firstName and lastName during render, so remove it from state.
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const fullName = firstName + ' ' + lastName;
 `
                 }
-                language='javascript'
+                language='jsx'
             />
 
             <hr></hr>
@@ -371,7 +371,7 @@ const [fullName, setFullName] = useState('');`
             <h3>Avoid duplication in state </h3>
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const initialItems = [
     { title: 'pretzels', id: 0 },
     { title: 'crispy seaweed', id: 1 },
@@ -383,7 +383,7 @@ const [selectedItem, setSelectedItem] = useState(
   items[0]
 );
 `}
-                language='javascript'
+                language='jsx'
             />
 
             <h5>What's your travel snack?</h5>
@@ -406,7 +406,7 @@ const [selectedItem, setSelectedItem] = useState(
             <p>You picked {selectedItem.title}.</p>
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`const [items, setItems] = useState(initialItems);
 const [selectedId, setSelectedId] = useState(0);
 
@@ -414,7 +414,7 @@ const selectedItem = items.find(item =>
     item.id === selectedId
 );  
 `}
-                language='javascript'
+                language='jsx'
             />
 
 
@@ -442,7 +442,7 @@ const selectedItem = items.find(item =>
             <h3>Avoid deeply nested state</h3>
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 customStyle={{
                     height: '300px',
                     overflow: 'scroll',
@@ -645,11 +645,11 @@ const selectedItem = items.find(item =>
     }]
     };
 `}
-                language='javascript'
+                language='jsx'
             />
 
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 customStyle={{
                     height: '300px',
                     overflow: 'scroll',
@@ -902,10 +902,10 @@ const selectedItem = items.find(item =>
     }
     };
 `}
-                language='javascript'
+                language='jsx'
             />
             <CopyBlock
-                theme={dracula}
+                theme={atomOneDark}
                 text={`function handleComplete(parentId, childId) {
     const parent = plan[parentId];
     // Create a new version of the parent place
@@ -923,7 +923,7 @@ const selectedItem = items.find(item =>
     });
 }
 `}
-                language='javascript'
+                language='jsx'
             />
 
             <h2>Places to visit</h2>

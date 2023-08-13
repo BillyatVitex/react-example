@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Form from '@/app/molecules/Form';
-import { CopyBlock, atomOneDark, dracula } from 'react-code-blocks';
+import { CopyBlock, atomOneDark } from 'react-code-blocks';
 
 export default function ReactingToInputWithState() {
     const [answer, setAnswer] = useState('');
@@ -96,7 +96,7 @@ const [isSubmitting, setIsSubmitting] = useState(false);
 const [isSuccess, setIsSuccess] = useState(false);
 const [isError, setIsError] = useState(false);
 `}
-                language='javascript'
+                language='jsx'
             />
 
             <hr></hr>
@@ -128,11 +128,8 @@ const [answer, setAnswer] = useState('');
 const [error, setError] = useState(null);
 const [status, setStatus] = useState('typing'); // 'typing', 'submitting', or 'success'
 `}
-                language='javascript'
+                language='jsx'
             />
-
-
-
 
             <hr></hr>
 
